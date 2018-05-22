@@ -46,7 +46,7 @@ func main() {
 	s := make(chan os.Signal)
 	defer close(s)
 
-	signal.Notify(s, os.Interrupt, syscall.SIGHUP)
+	signal.Notify(s, os.Interrupt, syscall.SIGTERM)
 
 	tasks := make(chan Work)
 
